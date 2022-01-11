@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css">
   <title>Bin2Dec</title>
 </head>
+
 <body>
   <div class="container">
     <div class="box">
-      <h1 class="title">Conversor Bin2Dec</h1>
+      <h1 class="title" id="title">Conversor Bin2Dec</h1>
 
       <div class="content">
-        <label class="pd-30">Binario</label>
-        <input type="text" id="binValue">
+        <div class="selects pd-30">
+          <label for="">De</label>
+          <select name="" id="selectFrom" onchange="chooseSelectTo()">
+            <option value="binario" selected>Binario</option>
+            <option value="decimal">Decimal</option>
+          </select>
 
-        <span class="pd-30"><button onclick="calculate()"> Converter </button></span>
+          <label for="">Para</label>
+          <span id="selectTo">Decimal</span>
+        </div>
 
-        <label class="pd-30">Decimal</label>
-        <input type="text" id="decValue" readonly>
+        <div class="input-group pd-input">
+          <input type="text" class="form-control" id="input" placeholder="Entrada">
+          <span class="input-group-text" id="inputSpan">2</span>
+        </div>
+
+        <button onclick="calculate()" class="btn btn-primary"> Converter </button>
+
+        <div class="input-group pd-input">
+          <input type="text" class="form-control" id="output" placeholder="Saida" readonly>
+          <span class="input-group-text" id="outputSpan">10</span>
+        </div>
       </div>
 
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
